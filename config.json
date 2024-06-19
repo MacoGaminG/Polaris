@@ -1,0 +1,14 @@
+{
+    // channel categories of Discord where the bot will work
+    "channelCategories"       : [
+        "1111111111111111111"
+    ],
+    // channels to ignore in the category
+    "channelToIgnore"       : [
+        "1111111111111111111"
+    ],
+    // roles that can access to the config (not implemented yet)
+    "configAccess"   : [
+        "295590905132482561"
+    ]
+}
