@@ -23,16 +23,14 @@ Polaris is a Discord bot powered by Groq's powerful LLM, designed to provide ins
 1. **Clone the Repository:**
 
    ```bash
-   git clone https://github.com/your-username/polaris.git
-   cd polaris
+   git clone https://github.com/MacoGaminG/Polaris.git
+   cd Polaris
    ```
-
 2. **Install Dependencies:**
 
    ```bash
    pnpm install 
    ```
-
 3. **Environment Variables:**
    Create a `.env` file in the root directory and add the following:
 
@@ -42,7 +40,6 @@ Polaris is a Discord bot powered by Groq's powerful LLM, designed to provide ins
         GROQ_API_KEY    =
         DISCORD_TOKEN   =
    ```
-
 4. **Configuration:**
    Adjust settings in `config.json`:
 
