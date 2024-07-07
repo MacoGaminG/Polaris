@@ -42,7 +42,7 @@ async function getGroqChatCompletion(author: string, input: string, context: Arr
 
     // If context is provided, append it to the message list
     if (context && context.length > 0) {
-        messages.push(...context);
+        messages.unshift(...context);
     }
 
     // Use Groq client to create a chat completion request
