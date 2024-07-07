@@ -13,6 +13,9 @@
     "configAccess"   : [
         "295590905132482561"
     ],
+
+    "description": "Message that will be displayed when the context is cleared",
+    "clearContextMessage": "Context cleared!",
     
     "description": "Number of messages that the bot will ignore (starting to the beginning of the chat history)",
     "messagesCountToIgnore": 0

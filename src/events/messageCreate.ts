@@ -2,6 +2,8 @@ import AI                                                                       
 import { Client, DMMessageManager, GuildMessageManager, Message, MessageType }  from "discord.js";
 import { splitTextIntoChunks } from "../utils/strings";
 import constants from "../utils/constants";
+import { clearContextMessage, messagesCountToIgnore } from "../../config.json";
+
 
 /**
  * This event listener handles incoming message creation events.
@@ -82,6 +84,11 @@ async function getContext(messages: GuildMessageManager | DMMessageManager, clie
                 return { role, content };
             }
         );
+
+        const lastContextReset = contextMessages.filter(message => (message.role === "assistant" && message.content === clearContextMessage)).at(-1);
+        if (lastContextReset) {
+            contextMessages.splice(0, contextMessages.indexOf(lastContextReset)+1);
+        }
 
         // Remove the current message from the context
         contextMessages.pop();
