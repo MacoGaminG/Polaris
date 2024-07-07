@@ -84,7 +84,11 @@ async function getContext(messages: GuildMessageManager | DMMessageManager, clie
         );
 
         // Remove the current message from the context
-        contextMessages.shift();
+        contextMessages.pop();
+        // Ignore first messages
+        for (let i = 0; i < messagesCountToIgnore; i++) {
+            contextMessages.shift();
+        }
 
         return contextMessages;
     });
