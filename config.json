@@ -30,5 +30,8 @@
         "llama-3.1-8b-instant",
         "llama3-8b-8192",
         "gemma-7b-it"
-    ]
+    ],
+
+    "description": "The text that will be append at the end of the message",
+    "endDisclaimer": "Important: Polaris can make mistakes. Consider checking important information."
 }

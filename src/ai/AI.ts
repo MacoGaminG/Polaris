@@ -1,7 +1,7 @@
 import Groq         from "groq-sdk";
 import { ExtendedModel, ExtendedModelList } from "../types/custom-groq";
 import { config }   from "dotenv";
-import { supportedModelsID } from "../../config.json";
+import { supportedModelsID, endDisclaimer } from "../../config.json";
 
 // Load environment variables from a .env file
 config();
@@ -131,8 +131,8 @@ async function generate(author: string, input: string, context: Array<{ role: st
         // Fetch a chat completion from Groq
         const chatCompletion = await getGroqChatCompletion(author, input, context, model);
 
-        // Extract the first generated response or return an error message
-        const response = chatCompletion.choices[0]?.message?.content || "";
+        // Extract the first generated response or return an error message + append endDisclaimer
+        const response = (chatCompletion.choices[0]?.message?.content || "") + (endDisclaimer ? "\n-# " + endDisclaimer : "");
 
         console.log("\n===== MESSAGE GENERATED\n", response);
         return response;
