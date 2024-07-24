@@ -26,9 +26,9 @@ export default {
         const userInput = message.content;
 
         try {
-
             // Show typing indicator
             message.channel.sendTyping();
+            const timeoutID = setInterval(() => message.channel.sendTyping(), 3000); // resend typing until the message is generated and sent (a single typing event lasts 6s)
 
             // Get a reference to the message manager for context retrieval
             const messages      = message.channel.messages;
@@ -51,6 +51,7 @@ export default {
                     message.channel.send(chunk); // then send other messages in the usual way
                 }
             }
+            clearInterval(timeoutID); // clear typing
         } catch (error) {
             
             // Log error for debugging
