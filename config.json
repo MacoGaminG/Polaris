@@ -18,5 +18,20 @@
     "clearContextMessage": "Context cleared!",
     
     "description": "Number of messages that the bot will ignore (starting to the beginning of the chat history)",
-    "messagesCountToIgnore": 0
+    "messagesCountToIgnore": 0,
+
+    "description": "List of all the models that polaris can use to answer the user (the order counts as priority order)",
+    "supportedModelsID": [
+        "llama-3.1-405b-reasoning",
+        "llama-3.1-70b-versatile",
+        "llama3-70b-8192",
+        "mixtral-8x7b-32768",
+        "gemma2-9b-it",
+        "llama-3.1-8b-instant",
+        "llama3-8b-8192",
+        "gemma-7b-it"
+    ],
+
+    "description": "The text that will be append at the end of the message",
+    "endDisclaimer": "Important: Polaris can make mistakes. Consider checking important information."
 }
