@@ -37,7 +37,7 @@ export default {
             const context = await getContext(messages, client);
 
             // Log user input
-            console.log("\n===== INPUT MESSAGE\n", userInput);
+            console.log("\n===== INPUT MESSAGE\n", userInput, "\n");
 
             // Generate AI response using user input and context
             const response = (await AI.generate(`<@${message.author.id}>}`, userInput, context));
