@@ -74,7 +74,7 @@ async function getGroqChatCompletion(author: string, input: string, context: Arr
     // Use Groq client to create a chat completion request
     return groq.chat.completions.create({
         messages    : messages,
-        model       : model,    // Specifying the Groq model for chat completions
+        model       : model,                // Specifying the Groq model for chat completions
         stream      : false,                // Disabling message streaming
         temperature : 1,                    // Setting the randomness/creativity of the response (1 = default)
     });
